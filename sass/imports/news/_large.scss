@@ -1,0 +1,32 @@
+@include mediaRange($size960, $size1600) {
+    .news_page {
+        padding-bottom: 160px;
+
+        .news_list {
+            padding-top: 40px
+        }
+
+        .inner_page {
+            padding-top: 30px;
+        }
+
+        .news_gallery {
+            padding-top: 140px;
+        }
+    }
+
+    .news_inner {
+        .date_title {
+            padding-top: 60px;
+        }
+
+        .news_list {
+            margin: 0;
+            @include rowMargin;
+        }
+
+        .news_section {
+            padding-top: 140px;
+        }
+    }
+}

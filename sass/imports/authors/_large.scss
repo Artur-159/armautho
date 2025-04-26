@@ -1,0 +1,11 @@
+@include mediaRange($size960,$size1440) {
+    .authors_page {
+        .authors_list > li ul{
+            padding-top: 5px;
+        }    
+        .info_list {
+            padding-top: 15px;
+        }
+    } 
+    
+}

@@ -1,0 +1,267 @@
+@include mediaTo($size960) {
+    .header {
+        &_inner {
+            padding: 10px 0;
+            align-items: center;
+        }
+
+        .menu_btn {
+            display: block;
+
+        }
+
+        .main_menu {
+            flex-direction: column;
+            align-items: start;
+            padding-top: 0;
+
+            li {
+                padding: 0 0 40px;
+                display: block;
+                min-height: unset;
+
+                a {
+                    font-size: 2rem;
+                    line-height: 24px;
+                }
+
+                >.submenu_list {
+                    background: transparent;
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    text-align: left;
+                    padding: 24px 40px 0;
+
+                    &:before {
+                        display: none;
+                    }
+
+                    >li {
+                        display: block;
+                        padding: 0 0 24px;
+
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+
+                        a {
+                            font-size: 1.6rem;
+                            line-height: 19px;
+                            font-family: $bold;
+                            padding: 0;
+
+                            &.submenu_btn {
+                                &:before {
+                                    margin-left: 40px;
+                                    font-size: 2.2rem;
+                                }
+                            }
+                        }
+
+                        &.opened {
+                            >a {
+                                background: transparent;
+                                color: $siteColor !important;
+
+                                &.submenu_btn {
+                                    &:before {
+                                        transform: rotate(-90deg);
+                                        color: $siteColor;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .submenu_list {
+                        position: unset !important;
+                        background: transparent;
+                        margin-left: 0;
+                        padding: 16px 0 0;
+
+                        li {
+                            &:first-child{
+                                padding-top: 0;
+                            }
+                                padding: 24px 0 0 20px;
+                        }
+
+                        a {
+                            font-family: $regular;
+                        }
+                    }
+                }
+            }
+
+            a {
+                justify-content: flex-end;
+                color: $black;
+            }
+        }
+
+        .menu_inner {
+            padding: 0 $containerPadding;
+            height: auto;
+        }
+
+        .menu_block {
+            margin-left: 0;
+            order: 2;
+            padding: 55px 0 0;
+            height: auto;
+        }
+
+        .lg_block {
+            order: 3;
+            padding-bottom: 30px;
+            padding-left: $containerPadding;
+            margin: 0;
+            font-size: 200%;
+            line-height: 24px;
+
+            .drop_btn {
+                display: none;
+            }
+
+            .drop_inner {
+                position: unset;
+                display: block;
+                border: none;
+                background: unset;
+
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 0 -5px;
+
+                    li {
+                        padding: 0 5px;
+                    }
+
+                    a {
+                        padding: 0;
+                        cursor: pointer;
+                    }
+
+                    .selected {
+                        a {
+                            color: $siteColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        .header_block {
+            @include mobileMenu(fixed, 85px, transparent, 0.5s);
+            align-items: flex-start;
+            flex-direction: column;
+            z-index: 99;
+            background: $white;
+            background-image: url("../../css/images/background_img.png");
+            background-position: center top;
+            background-size: inherit;
+            @include animStyle(.3s);
+            bottom: 100%;
+            overflow-y: auto;
+        }
+
+        .search_block {
+            width: 100%;
+            padding: 40px $containerPadding 0;
+        }
+
+        .search_form {
+            margin-right: auto;
+            flex: 588px;
+            max-width: 588px;
+        }
+
+        .search_field {
+            order: 2;
+
+            input {
+                width: auto;
+            }
+        }
+
+    }
+
+    .menu_opened {
+        overflow: hidden;
+
+        .header_block {
+            bottom: 0;
+        }
+
+        .menu_btn {
+            color: $siteColor;
+
+            span {
+                @include animStyle(opacity 0.2s 0s);
+                opacity: 0;
+            }
+
+            &:after ,
+            &:before {
+                border-top: 3px solid;
+                width: 21px;
+                left: 29px;
+            }
+
+            &:after {
+                @include transStyle(rotate(-45deg));
+                bottom: 15px;
+            }
+
+            &:before  {
+                @include transStyle(rotate(45deg));
+            }
+        }
+    }
+}
+
+@include mediaTo($size576) {
+
+    .header {
+        .header_inner {
+            padding: 16px 0;
+        }
+
+        .main_logo img {
+            height: 41px;
+            aspect-ratio: 36 / 41;
+        }
+
+        .menu_btn {
+            display: block;
+
+            &:after {
+                bottom: 16px;
+            }
+
+            &:before {
+                top: 16px;
+            }
+        }
+    }
+
+    .menu_opened {
+        .menu_btn {
+
+            &:after {
+                width: 20px;
+                left: 32px;
+                border-top: 3px solid;
+            }
+
+            &:before {
+                width: 20px;
+                left: 32px;
+                border-top: 3px solid;
+            }
+        }
+    }
+}

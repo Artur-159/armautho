@@ -1,0 +1,154 @@
+@include mediaTo($size960) {
+    // video_gallery_page
+
+    .content {
+        background-position: center bottom;
+        background-size: auto;
+    }
+
+    .video_gallery_page {
+        padding: 40px 0 140px;
+
+        .tab_btns,
+        .paging {
+            padding-top: 40px;
+        }
+
+        .news_section {
+            padding-top: 80px;
+        }
+
+        .links_btn,
+        .video_list {
+            padding-top: 60px;
+        }
+    }
+
+    .gallery_page {
+
+        .links_btn,
+        .gallery_list {
+            padding-top: 60px;
+        }
+    }
+
+
+    // video_gallery_page
+
+    // galleryInner
+
+    .galleryInner_page {
+        padding: 40px 0 140px;
+
+        .inner_list {
+            li {
+                @include colSize(4)
+            }
+        }
+
+        .news_gallery {
+            padding-top: 60px;
+        }
+    }
+
+    // galleryInner
+
+
+}
+
+
+
+@include mediaTo($size768) {
+
+    // video_gallery_page
+
+    .video_gallery_page {
+        padding: 30px 0 60px;
+
+        .news_section {
+            padding-top: 60px;
+        }
+
+        .links_btn,
+        .video_list {
+            padding-top: 40px;
+        }
+    }
+
+    .gallery_page {
+        .links_btn,
+        .gallery_list {
+            padding-top: 40px;
+        }
+    }
+
+    // video_gallery_pages
+
+    // galleryInner
+
+    .galleryInner_page {
+        padding: 30px 0 60px;
+
+        .inner_list {
+            li {
+                @include colSize(6)
+            }
+        }
+
+        .inner_list {
+            padding-top: 30px;
+        }
+
+        .tab_section,
+        .tab_btns {
+            padding-top: 20px;
+        }
+
+        .news_gallery {
+            padding-top: 40px;
+        }
+    }
+
+    // galleryInner
+
+}
+
+
+@include mediaTo($size576) {
+
+    // video_gallery_page
+
+    .video_gallery_page {
+        padding: 20px 0 40px;
+
+        .news_section {
+            padding-top: 40px;
+        }
+
+        .page_title {
+            padding-top: 20px
+        }
+    }
+
+    // video_gallery_pagery_page
+
+
+    // galleryInner
+
+    .galleryInner_page {
+        padding: 20px 0 40px;
+
+        .inner_list {
+            li {
+                @include colSize(12)
+            }
+        }
+
+        .news_gallery {
+            padding-top: 20px;
+        }
+    }
+
+    // galleryInner
+
+}

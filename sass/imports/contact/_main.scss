@@ -1,0 +1,144 @@
+.content {
+  background-image: unset;
+  position: relative;
+
+  &:before {
+    @include psevdoAbs;
+    height: 1080px;
+    width: 100%;
+    z-index: -1;
+    background-image: url('../../css/images/background_img.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center top;
+  }
+}
+
+
+.contact_page {
+  padding: 120px 0 200px;
+
+  .page_img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1479 / 219;
+    border-radius: 1231px 1181px 0 0;
+  }
+
+  .contact_inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-top: 80px;
+    @include rowMargin;
+  }
+
+  .info_block,
+  .form_block {
+    @include standardCol(6)
+  }
+
+  .block_title {
+    margin: 0;
+    text-align: center;
+    @extend %pageTitle;
+  }
+
+  .info_list {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0 0;
+    margin: 0 auto;
+    list-style-type: none;
+    max-width: 360px;
+
+    li {
+      margin-bottom: 20px;
+      @extend %middleText;
+
+      a {
+        display: flex;
+        padding: 4px 0;
+        @include animStyle(0.3s);
+
+        &:hover {
+          @media(hover: hover) {
+            opacity: 0.6;
+          }
+        }
+
+        &:before {
+          margin-right: 10px;
+        }
+
+        &:not(:first-child) {
+          padding-left: 26px;
+        }
+      }
+
+      span {
+        display: flex;
+
+        &:before {
+          margin-right: 10px;
+        }
+      }
+
+    }
+  }
+
+  form {
+    padding-top: 40px;
+  }
+
+  .form_section {
+    max-width: 440px;
+  }
+
+  .primary_link {
+    margin: 0 auto;
+    display: flex;
+    padding: 11px 54px;
+    background: $siteColor;
+    @extend %opacityHover;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .faq_section {
+    padding-top: 160px;
+
+    .page_title {
+      margin: 0
+    }
+
+    .inner_section {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      @include rowMargin;
+
+    }
+
+    .left_block {
+      @include standardCol(5);
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 500px 500px 0 0;
+        aspect-ratio: 587 / 780;
+      }
+    }
+
+    .right_block {
+      @include standardCol(7);
+    }
+  }
+
+}

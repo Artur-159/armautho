@@ -1,0 +1,772 @@
+html {
+    height: 100%;
+    font-size: 10px;
+    line-height: 1.4286em;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    color: $textColor;
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    min-height: 100%;
+    font-family: $regular;
+
+    &.popup_opened {
+        overflow: hidden;
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button,
+a,
+.slick-slide {
+    outline: none !important;
+}
+
+a,
+a:focus,
+a:hover,
+button:hover {
+    text-decoration: none;
+}
+
+a {
+    color: $black;
+
+    &:not([href]) {
+        pointer-events: none;
+    }
+}
+
+button {
+    cursor: pointer;
+    display: block;
+}
+
+img {
+    max-height: none;
+    border: none;
+}
+
+input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input,
+textarea,
+button {
+    font-family: inherit;
+    font-size: 160%;
+}
+
+.page_row {
+    display: flex;
+    flex-wrap: wrap;
+    @include rowMargin;
+
+    .cb {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.page_container {
+    @include containerPadding;
+    width: 100%;
+    margin: 0 auto;
+    @include containerPadding;
+    @include mediaFrom($size1600) {
+        max-width: $container1920 + 2*$containerPadding;
+    }
+    @include mediaRange($size1440, $size1600) {
+        max-width: $container1600 + 2*$containerPadding;
+    }
+    @include mediaRange($size1280, $size1440) {
+        max-width: $container1440 + 2*$containerPadding;
+    }
+    @include mediaRange($size960, $size1280) {
+        max-width: $container1280 + 2*$containerPadding;
+    }
+}
+
+.large_container {
+    width: 100%;
+    max-width: 1730 + 2*$containerPadding;
+    margin: 0 auto;
+    @include containerPadding;
+}
+
+.individual_hint,
+.drop_list,
+.drop_block {
+    display: none;
+}
+
+.individual_hint {
+    color: $error;
+}
+
+.error_hint {
+    display: block;
+    max-height: 0;
+    @extend %all300;
+    overflow: hidden;
+    color: $error;
+}
+
+.help-block.form-error {
+    display: none !important;
+}
+
+.has-error {
+
+    .error_hint,
+    ~.error_hint {
+        max-height: 60px;
+    }
+}
+
+.field_block {
+    margin-bottom: 25px;
+    @include colSize(6);
+
+    @include mediaTo($size768) {
+        @include colSize(12);
+    }
+
+    &.full_field {
+        @include colSize(12);
+    }
+
+    &:has(:focus) {
+
+        .city_select,
+        .field_name {
+            color: $white;
+            border-color: $gray66;
+        }
+
+        input {
+            border-color: $siteColor;
+        }
+    }
+
+    &:has(.error) {
+        input {
+            border-color: $error;
+        }
+    }
+
+    input,
+    textarea {
+        padding: 12px 24px;
+        border: 1px solid;
+        width: 100%;
+        border-radius: 24px;
+        resize: none;
+
+        @include mediaTo($size768) {
+            border-radius: 15px;
+        }
+
+        &::placeholder {
+            color: $black;
+            font-size: 1.4rem;
+
+            @include mediaTo($size960) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    .error_hint {
+        font-size: 1.4rem;
+        line-height: 1.5em;
+    }
+
+    &.error .error_hint,
+    &.error~.error_hint {
+        max-height: 60px;
+    }
+}
+
+.cb {
+    display: block;
+    clear: both;
+}
+
+.head_block {
+    display: flex;
+    align-items: center;
+
+    a {
+        padding-left: 10px;
+        display: inline-block;
+        vertical-align: top;
+        color: $siteColor;
+        @extend %middleText;
+        @extend %opacityHover;
+    }
+
+    .page_title {
+        border-right: 2px solid $siteColor;
+        padding-right: 10px;
+    }
+}
+
+.section_title {
+    font-family: $bold;
+    margin: 0;
+}
+
+.standard_textpage {
+    font-size: 200%;
+    line-height: 32px;
+    padding: $containerPadding 0 0;
+
+    @include mediaTo($size960) {
+        font-size: 160%;
+        line-height: 24px;
+    }
+
+    @include mediaTo($size768) {
+        font-size: 140%;
+        line-height: 24px;
+    }
+
+    p {
+        margin: 0;
+        color: $darcGrean;
+    }
+
+    h1,
+    h2,
+    h3 {
+        margin: 0;
+        color: #32353D;
+        font-family: $bold;
+        font-size: 2.4rem;
+        line-height: 1.22em;
+
+        @include mediaRange($size960, $size1280) {
+            font-size: 3rem;
+            line-height: 1.25em;
+        }
+
+        @include mediaRange($size768, $size960) {
+            font-size: 2.5rem;
+            line-height: 1.3em;
+        }
+
+        @include mediaRange($size576, $size768) {
+            font-size: 2rem;
+            line-height: 1.25em;
+        }
+
+        @include mediaTo($size576) {
+            font-size: 1.8rem;
+            line-height: 1.25em;
+        }
+    }
+
+    h4 {
+        margin: 0;
+        color: #32353D;
+        font-family: $bold;
+        font-size: 1.8rem;
+        line-height: 1.22em;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0 35px 0;
+        color: inherit;
+        list-style-type: disc;
+
+        li {
+            padding-bottom: 20px;
+            position: relative;
+        }
+    }
+
+    ol {
+        margin: 0;
+        padding-left: 25px;
+
+        li {
+            padding: 0;
+            position: relative;
+        }
+    }
+
+    img {
+        height: auto;
+        max-width: 100%;
+        display: block;
+        border-radius: 10px;
+    }
+
+    a {
+        color: $pinterestColor;
+        text-decoration: underline;
+        line-height: inherit;
+        @extend %siteColorHover;
+    }
+
+    .blog_inner {
+        margin-top: -230px;
+        border-radius: 20px;
+    }
+}
+
+.tab_block {
+    @include tabBlock(0.3s);
+}
+
+.faq_list {
+    border-radius: 15px;
+    list-style-type: none;
+    padding: 40px 0 0;
+    margin: 0 auto 0;
+    max-width: 1224px;
+
+    >li {
+        @extend %back300;
+        background: $lightGrean;
+        border-radius: 20px;
+        margin-bottom: 20px;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &.opened {
+            .question_block {
+                background: none;
+                box-shadow: none;
+                color: $siteColor;
+
+                &:before {
+                    transform: rotate(45deg);
+                    background: $white;
+                    color: $siteColor;
+                }
+            }
+
+            .answer_block {
+                height: 340px;
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    .answer_block {
+        color: $siteColor;
+        @extend %middleText;
+        position: relative;
+        overflow-y: auto;
+        overflow-x: hidden;
+        @include customScroll(2px, 0, 0, 0, 0, $siteColor);
+        height: 0;
+        @include animStyle(all .3s);
+
+        padding: 0 20px 0;
+        display: block;
+        line-height: 24px;
+
+
+        >* {
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .question_block {
+        padding: 20px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 20px;
+        font-family: $bold;
+        color: $black;
+        cursor: pointer;
+        @extend %middleText;
+        @extend %siteColorHover;
+        @extend %iconElement;
+        @include animStyle(all 0.3s);
+
+        &:before {
+            content: "\e912";
+            margin-left: 10px;
+            font-size: 2.2rem;
+            color: $white;
+            padding: 10px;
+            border-radius: 50%;
+            @include animStyle(all 0.5s);
+            background: linear-gradient(90deg, #07290B -35.94%, $siteColor 100%);
+            background-size: 15% 100%;
+            background-repeat: repeat;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+
+    @include mediaTo($size400) {
+        .drop_btn {
+            padding: 20px $containerPadding;
+        }
+
+        .drop_block {
+            padding: 0 $containerPadding 0;
+        }
+    }
+}
+
+.breadcrumbs {
+    padding-top: $containerPadding;
+
+    ul {
+        @extend %standardList;
+        display: flex;
+        align-items: center;
+    }
+
+    li {
+        color: $white;
+        display: flex;
+        padding: 0 8px;
+
+        &:last-child {
+            flex: 1;
+            width: 10%;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            color: $darcGrean;
+            font-size: 1.6rem;
+            line-height: 19px;
+            font-family: $bold;
+
+            &:before {
+                font-size: 120%;
+            }
+        }
+
+        .text_content {
+            @include textOverflow(1, relative);
+            max-width: 280px;
+        }
+
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        color: $gray99;
+        position: relative;
+        @extend %siteColorHover;
+        @extend %middleText;
+
+        &:before {
+            font-size: 120%;
+        }
+    }
+
+    @include mediaTo($size768) {
+        display: none;
+    }
+}
+
+.paging {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 -4px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    li {
+        padding: 0 3px;
+        font-size: 130%;
+        line-height: 15px;
+        color: $disabledColor;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: $white;
+        color: $disabledColor;
+        border: 1px solid $disabledColor;
+        @extend %linkHover;
+        @include animStyle(all .3s);
+        font-family: $bold;
+        border-radius: 50%;
+
+        &.current_page {
+            background: $siteColor;
+            color: $white;
+            pointer-events: none;
+        }
+    }
+
+    .next_page,
+    .prev_page {
+        font-size: 0;
+        line-height: 10px;
+        color: $darcGrean;
+        width: auto;
+        border: none;
+        background: transparent;
+
+        &.inactive {
+            color: $darcGrean;
+            pointer-events: none;
+        }
+
+        &:before {
+            font-size: 1.8rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid $disabledColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $white;
+
+            @include mediaTo($size576) {
+                width: 25px;
+                height: 26px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .pagination_dots {
+        border: none;
+        padding: 0 $containerPadding;
+
+        @include mediaTo($size576) {
+            padding: 0;
+        }
+
+    }
+}
+
+.title_block {
+    @extend %titleBlock
+}
+
+.primary_btn {
+    @extend %primaryBtn;
+}
+
+.secondary_btn {
+    @extend %secondaryBtn;
+}
+
+.primary_link {
+    @extend %primary_link;
+}
+
+.standard_text {
+    @extend %standardText;
+}
+
+.page_title {
+    @extend %pageTitle;
+}
+
+.block_title {
+    @extend %blockTitle;
+}
+
+.hidden_label {
+    display: none;
+}
+
+.description_block {
+    @extend %middleText;
+}
+
+.inner_text {
+    @extend %middleText;
+}
+
+.popup_block {
+    @include popupBlock($black, 70%);
+    @include popupTop(0.3s);
+
+    .popup_inner {
+        @include popupInner(15px);
+    }
+
+    .popup_container {
+        @include popupContainer($white, 442px, 20px 20px 20px, );
+        border-radius: 10px;
+    }
+
+    .popup_close.icon_close {
+        border: none;
+        background: none;
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1;
+        color: $black;
+        border-radius: 7px;
+
+        &:before {
+            font-size: 2rem;
+            @extend %opacityHover;
+        }
+
+        @include mediaTo($size960) {
+            right: 10px;
+            top: 10px;
+            width: 30px;
+            height: 30px;
+
+            &:before {
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
+
+.success_popup,
+.error_popup {
+    .popup_content {
+        ul li {
+            font-size: 1.6rem
+        }
+    }
+
+    .popup_title {
+        font-family: $bold;
+        @extend %middleText;
+        margin-bottom: 10px;
+        padding-right: 30px;
+        display: flex;
+        align-items: baseline;
+
+        &:before {
+            margin-right: 8px;
+            font-size: 1.6rem;
+        }
+    }
+
+    ul {
+        padding: 0;
+        margin: 0 20px 0;
+        list-style-type: disc;
+        @extend %middleText;
+    }
+
+    .description_sub {
+        margin-left: 25px;
+        font-size: 140%;
+        line-height: 20px;
+        max-width: 375px;
+        padding-right: 25px;
+    }
+}
+
+.success_popup {
+    .popup_container {
+        border: 1px solid $siteColor;
+    }
+
+    .popup_title {
+        color: $siteColor;
+    }
+}
+
+.error_popup {
+    .popup_title {
+        color: $error;
+    }
+
+    .popup_container {
+        border: 1px solid $error;
+    }
+}
+
+@keyframes loadAnimation {
+    9% {
+        box-shadow: none;
+    }
+
+    10% {
+        box-shadow: -8px 0 0;
+    }
+
+    35% {
+        box-shadow: -8px 0 0;
+    }
+
+    35.1% {
+        box-shadow: -8px 0 0, 8px 0 0;
+    }
+
+    60% {
+        box-shadow: -8px 0 0, 8px 0 0;
+    }
+
+    60.1% {
+        box-shadow: -8px 0 0, 8px 0 0, 24px 0 0;
+    }
+
+    85% {
+        box-shadow: -8px 0 0, 8px 0 0, 24px 0 0;
+    }
+
+    85.1% {
+        box-shadow: none
+    }
+
+    100% {
+        box-shadow: none
+    }
+}

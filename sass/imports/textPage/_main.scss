@@ -1,0 +1,33 @@
+.content {
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.text_page {
+    padding: 120px 0 160px;
+}
+    .page_title {
+        margin: 0;
+        text-align: center;
+    }
+    .page_img {
+        padding-top: 80px;
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            object-fit: cover;
+            aspect-ratio: 1440 / 505
+        }
+    }
+    .news_section {
+        padding-top: 160px;
+        @include swiperSlide;
+    }
+    .swiper-container {
+        @include slider(4);
+        padding-top: 40px;
+        margin: 0 -10px;
+    }

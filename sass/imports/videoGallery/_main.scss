@@ -1,0 +1,130 @@
+// video_gallery_page
+
+.content {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.video_gallery_page {
+    padding: 60px 0 200px;
+
+    .page_title {
+        align-items: center;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 40px;
+    }
+
+    .tab_section {
+        padding-top: 0;
+    }
+
+    .links_btn,
+    .tab_btns {
+        align-items: center;
+        justify-content: center;
+        padding-top: 80px;
+    }
+
+    .news_section {
+        @include swiperSlide;
+        padding-top: 160px;
+
+        .page_title {
+            padding-top: 0;
+        }
+
+        .swiper-slide {
+            @include gridPadding;
+        }
+    }
+
+    .swiper-container {
+        @include slider(4);
+        margin: 0;
+        @include rowMargin;
+    }
+
+    .news_list {
+        padding-top: 40px;
+    }
+
+    .paging {
+        padding-top: 80px;
+    }
+
+    .video_list {
+        padding-top: 80px;
+    }
+
+}
+
+.gallery_page {
+    .gallery_list {
+        padding-top: 80px;
+    }
+}
+
+// video_gallery_page
+
+// galleryInner
+
+.galleryInner_page {
+    padding: 60px 0 200px;
+
+    .page_title {
+        text-align: center;
+    }
+
+    .gallery_list {
+        padding-top: 40px;
+
+        .news_block {
+            cursor: pointer;
+        }
+    }
+
+    .news_block {
+        cursor: unset;
+    }
+
+    .gallery_inner img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 20px;
+        aspect-ratio: 1440 / 505;
+    }
+
+    .inner_list {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 40px 0 0;
+        margin: 0;
+        @include rowMargin;
+        list-style-type: none;
+
+        li {
+            @include standardCol(3);
+            margin-bottom: 30px;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                aspect-ratio: 345 / 331;
+            }
+        }
+    }
+
+    .news_gallery {
+        padding-top: 140px;
+    }
+}
+
+
+// galleryInner

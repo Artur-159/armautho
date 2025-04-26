@@ -1,0 +1,171 @@
+@include mediaFrom($size960) {
+    .header {
+
+        .main_menu {
+
+            .selected {
+                a {
+                    color: $siteColor;
+                }
+            }
+
+            >li {
+                .submenu_list {
+                    >li {
+                        .submenu_btn {
+                            justify-content: space-between;
+                        }
+                    }
+                }
+
+                &:nth-last-child(2),
+                &:last-child {
+                    .submenu_list {
+                        right: 12px;
+                        left: unset;
+
+                        >li {
+                            &.opened {
+                                >a {
+                                 
+                                    &.submenu_btn {
+                                        color: $white;
+            
+                                        &:after {
+                                            @include psevdoAbs;
+                                            left: -25px;
+                                            z-index: 1;
+                                            height: 100%;
+                                            width: 25px;
+                                            background: transparent;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .submenu_list {
+                            right: 100%;
+                            left: unset;
+                            margin-left: unset;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@include mediaRange($size1366, $size1600) {
+    .header {
+        .main_menu {
+            margin: 0 -15px;
+            padding-top: 40px;
+
+            >li {
+                padding: 0 $containerPadding 40px;
+
+                .submenu_list {
+                    left: 7px;
+                }
+            }
+        }
+    }
+}
+
+@include mediaRange($size1280, $size1366) {
+    .header {
+        .main_menu {
+            margin: 0 -10px;
+            padding-top: 40px;
+
+            >li {
+                padding: 0 10px 40px;
+                font-size: 140%;
+                line-height: 19px;
+
+                .submenu_list {
+                    left: 2px;
+                }
+            }
+        }
+
+        .lg_block {
+            margin-right: 10px;
+
+            .drop_btn {
+                font-size: 1.4rem;
+                line-height: 19px;
+            }
+        }
+    }
+}
+
+@include mediaRange($size960, $size1280) {
+    .header {
+        .main_menu {
+            margin: 0 -8px;
+            padding-top: 30px;
+
+            >li {
+                padding: 0 8px 30px;
+                font-size: 120%;
+                line-height: 16px;
+
+                >a.submenu_btn:before {
+                    margin-left: 5px;
+                    font-size: 1.5rem;
+                }
+
+                .submenu_list {
+                    left: 0;
+                    padding: 0 8px 12px;
+
+                    >li {
+                        padding-top: 10px;
+
+                        a {
+                            padding: 6px 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .lg_block {
+            margin: 0 10px;
+
+            .drop_btn {
+                font-size: 1.2rem;
+                line-height: 16px;
+
+                &:before {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+@include mediaRange($size960, $size1200) {
+    .header {
+        .main_menu {
+            >li {
+                font-size: 110%;
+                line-height: 14px;
+            }
+        }
+
+        .lg_block {
+            .drop_btn {
+                font-size: 1.1rem;
+                line-height: 14px;
+
+                &:before {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}

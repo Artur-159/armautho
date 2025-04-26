@@ -1,0 +1,8 @@
+@include mediaRange($size960, $size1600) {
+    .contact_page {
+        padding: 80px 0 160px;
+        .faq_section {
+            padding-top: 140px;
+        }
+    }
+}

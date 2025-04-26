@@ -1,0 +1,119 @@
+.content {
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.search_page {
+    padding: 120px 0 200px;
+
+    .search_text {
+        @extend %pageTitle;
+        font-family: $bold;
+        color: $darcGrean;
+        text-align: center;
+    }
+
+    .date_block {
+        display: block;
+        color: $grayDate;
+        padding-bottom: 10px;
+        @extend %middleText
+    }
+
+    .search_result {
+        padding-top: 80px;
+    }
+
+    .results_list {
+        @extend %standardList;
+
+        li {
+            margin-bottom: 40px;
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+
+            &.hovered {
+                img {
+                    opacity: 0.8;
+                }
+
+                .result_title {
+                    color: $black;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        img {
+            display: block;
+            width: 280px;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            @extend %opacity300;
+        }
+
+        .info_block {
+            flex: 1;
+            width: 50%;
+            padding: $containerPadding 0;
+
+            a {
+                @include animStyle(.3s)
+            }
+        }
+
+        .block_title {
+            display: inline-block;
+            vertical-align: top;
+            color: inherit;
+            margin-bottom: 20px;
+            @extend %color300;
+            @include textOverflow(2, relative);
+
+        }
+
+        .image_block {
+            display: inline-flex;
+            vertical-align: top;
+            font-size: 0;
+            line-height: 0;
+            padding-right: 30px;
+
+            &:empty {
+                display: none;
+            }
+        }
+
+        .description_block {
+            @include textOverflow(5, relative);
+
+        }
+    }
+
+    .combo_hover {
+        a {
+            @include animStyle(all .3s);
+
+        }
+
+        &:hover {
+            @media (hover:hover) {
+                &:has(a:hover) {
+                    a {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .fail_text {
+        @extend %pageTitle;
+        color: $disabledColor;
+        text-align: center;
+    }
+}

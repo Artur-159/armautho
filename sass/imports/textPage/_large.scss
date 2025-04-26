@@ -1,0 +1,5 @@
+@include mediaRange($size960, $size1600) {
+    .text_page {
+        padding: 80px 0 120px;
+    }
+}

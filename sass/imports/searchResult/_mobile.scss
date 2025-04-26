@@ -1,0 +1,46 @@
+@include mediaTo($size960) {
+    .search_page {
+        padding: 80px 0 160px;
+
+        .search_result {
+            padding-top: 60px;
+        }
+    }
+}
+
+@include mediaTo($size768) {
+    .search_page {
+        padding: 60px 0 80px;
+
+        .search_result {
+            padding-top: 40px;
+        }
+
+        .results_list {
+            li {
+                display: block;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            .info_block {
+                padding: $containerPadding 0 0;
+                flex: none;
+                width: 100%;
+            }
+
+            .image_block {
+                width: 100%;
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+@include mediaTo($size576) {
+    .search_page {
+        padding: 40px 0 60px;
+    }
+}

@@ -1,0 +1,161 @@
+@include mediaTo($size960) {
+
+    // .main_section
+    .content {
+        background-position: center right;
+    }
+
+    .main_section {
+        padding: 120px 0 140px;
+
+        // slider_section
+
+        .swiper_inner,
+        .slider_img {
+            @include colSize(12)
+        }
+
+        .swiper_inner {
+            order: 2;
+            padding: 25px 0 50px;
+        }
+
+        .slider_img {
+            order: 1;
+
+            img {
+                object-fit: cover;
+                aspect-ratio: 1 / 1;
+                margin: 0 auto;
+                max-width: 573px;
+            }
+        }
+
+        .swiper-pagination {
+            bottom: 14px;
+        }
+
+        // slider_section
+
+
+        //  news_section
+
+        .news_section {
+            padding-top: 80px;
+        }
+
+        //  news_section
+
+        // links_section
+
+        .links_section {
+            padding-top: 80px;
+
+            .links_list li {
+                @include colSize(6);
+                margin-bottom: 20px;
+            }
+        }
+
+        // links_section
+
+
+        // news_gallery
+
+        .news_gallery {
+            padding-top: 80px;
+        }
+
+        // news_gallery
+
+        //  faq_section
+
+        .faq_section {
+            padding-top: 80px;
+        }
+    }
+
+    // .main_section
+
+}
+
+
+@include mediaTo($size768) {
+
+    // .main_section
+
+    .main_section {
+        padding: 80px 0 120px;
+
+        // links_section
+
+        .links_section {
+            padding-top: 60px;
+            .links_list li {
+                @include colSize(12);
+                margin-bottom: 20px;
+            }
+
+            .inner_list {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        // links_section
+
+
+        // news_gallery
+
+        .news_gallery {
+            padding-top: 40px;
+        }
+
+        // news_gallery
+
+
+        //  faq_section 
+
+        .faq_section {
+            padding-top: 40px;
+            .left_block {
+                display: none;
+            }
+            .right_block{
+                @include colSize(12)
+            }
+        }
+
+        //  faq_section 
+
+    }
+
+    // .main_section
+}
+
+
+@include mediaTo($size576) {
+
+    // .main_section
+
+    .main_section {
+        padding: 35px 0 60px;
+
+        // news_section
+
+        .news_section {
+            padding-top: 30px;
+
+            .news_list {
+                padding-top: 25px;
+            }
+        }
+
+        // news_section
+        .swiper_inner {
+            padding-bottom: 30px;
+        }
+    }
+
+    // .main_section
+}

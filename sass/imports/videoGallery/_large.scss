@@ -1,0 +1,25 @@
+@include mediaRange($size960, $size1600) {
+    .video_gallery_page {
+        padding: 40px 0 160px;
+        .links_btn {
+            padding-top: 60px;
+        }
+        .video_list {
+            padding-top: 60px;
+        }
+        .news_section {
+            padding-top: 140px;
+        }
+    }
+    .gallery_page {
+        .gallery_list {
+            padding-top: 60px;
+        }
+    }
+    .galleryInner_page  {
+        padding: 40px 0 160px;
+        .news_gallery {
+            padding-top: 120px;
+        }
+    }
+}

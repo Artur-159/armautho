@@ -1,0 +1,56 @@
+.authors_page {
+  padding: 60px 0 180px;
+
+  .page_title {
+    margin: 0;
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .authors_list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 80px 0 0;
+    margin: 0;
+    @include rowMargin;
+    list-style-type: none;
+
+    >li {
+      @include standardCol(3);
+      margin-bottom: 30px;
+
+      ul {
+        padding: 16px 25px 0;
+        margin: 0;
+        list-style-type: disc;
+        @extend %middleText;
+        @include textOverflow(5, relative)
+      }
+    }
+  }
+
+  .info_list {
+    padding-top: 20px;
+  }
+
+  .img_block img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    aspect-ratio: 345 / 440;
+  }
+
+  .block_title {
+    @extend %blockTitle;
+    color: $black;
+    font-family: $bold;
+    @include textOverflow(2, relative);
+  }
+
+  .position_block {
+    @extend %middleText;
+    color: $gray12;
+    padding-top: 5px;
+  }
+}

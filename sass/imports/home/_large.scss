@@ -1,0 +1,44 @@
+@include mediaRange($size960, $size1366) {
+    .main_section {
+        .swiper-pagination {
+            bottom: 50px;
+        }
+    }
+}
+
+@include mediaRange($size960, $size1440) {
+    .main_section {
+        .swiper_inner {
+            padding-bottom: 15px;
+        }
+
+        .swiper-pagination {
+            bottom: 0;
+        }
+    }
+}
+
+
+@include mediaRange($size960, $size1600) {
+    .main_section {
+        padding: 140px 0 160px;
+
+        .links_section {
+            padding-top: 60px;
+
+            .links_list li {
+                @include colSize(4);
+                margin-bottom: 20px;
+            }
+        }
+
+        .news_section {
+            padding-top: 140px;
+        }
+
+        .news_gallery,
+        .faq_section {
+            padding-top: 140px;
+        }
+    }
+}

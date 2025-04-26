@@ -1,0 +1,136 @@
+.footer {
+    opacity: 1;
+    @extend %opacity300;
+
+    .top_footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        padding: 40px 0 20px;
+    }
+
+    &_logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            display: block;
+            width: auto;
+            height: 63px;
+        }
+    }
+
+    .logo_text {
+        margin-left: 8px;
+        font-size: 160%;
+        line-height: 1.25em;
+
+        span {
+            font-family: $bold;
+        }
+    }
+
+    .description_block {
+        max-width: 500px;
+        padding-top: 20px;
+        font-size: 180%;
+        line-height: 21px;
+    }
+
+
+    .left_block {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu_list {
+        display: flex;
+        flex-direction: column;
+        @include standardList;
+        padding-top: 20px;
+
+        li {
+            padding-bottom: 20px;
+
+            a {
+                @extend %middleText;
+                color: $darcGrean;
+                display: inline-block;
+                vertical-align: top;
+                @extend %opacityHover;
+            }
+        }
+    }
+
+    .menu_title,
+    .follow_text {
+        @extend %middleText;
+        font-family: $bold;
+    }
+
+    .social_list {
+        display: flex;
+        align-items: center;
+        padding: 20px 0 0;
+        margin: 0 -20px;
+        list-style-type: none;
+
+        li {
+            padding: 0 20px;
+
+            a {
+                display: inline-block;
+                vertical-align: top;
+                font-size: 0;
+                @extend %opacityHover;
+
+                &:before {
+                    font-size: 2.4rem;
+                    color: $siteColor;
+                }
+            }
+        }
+    }
+
+    .bottom_footer {
+        background: $black13;
+    }
+
+    .bottom_inner {
+        display: flex;
+        padding: $containerPadding 0;
+        @extend %standardText;
+    }
+
+    .copyrights {
+        color: $white;
+
+        span {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+
+    .developer {
+        margin-left: auto;
+        color: $white;
+
+        a {
+            @extend %opacityHover;
+            font-size: 0;
+        }
+
+        a {
+            margin-left: 10px;
+
+            img {
+                display: inline-block;
+                vertical-align: top;
+                width: auto;
+                max-width: 116px;
+                height: 14px;
+                object-fit: contain;
+            }
+        }
+    }
+}

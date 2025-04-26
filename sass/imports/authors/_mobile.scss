@@ -1,0 +1,60 @@
+@include mediaTo($size960) {
+    .authors_page {
+        padding: 40px 0 120px;
+
+        .page_title {
+            padding-top: 30px;
+        }
+
+        .authors_list {
+            padding-top: 60px;
+
+            >li {
+                @include standardCol(4);
+                margin-bottom: 20px;
+
+                ul {
+                    padding-top: 5px;
+                }
+            }
+        }
+
+        .info_list {
+            padding-top: 15px;
+        }
+    }
+}
+
+@include mediaTo($size768) {
+    .authors_page {
+        padding: 30px 0 60px;
+
+        .page_title {
+            padding-top: 20px;
+        }
+
+        .authors_list {
+            padding-top: 40px;
+
+            >li {
+                @include standardCol(6);
+            }
+        }
+    }
+}
+
+
+
+@include mediaTo($size576) {
+    .authors_page {
+        padding: 20px 0 40px;
+
+        .authors_list {
+            padding-top: 30px;
+
+            >li {
+                @include standardCol(12);
+            }
+        }
+    }
+}
