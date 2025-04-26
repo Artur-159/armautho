@@ -1,0 +1,122 @@
+@media screen and (min-width: 1025px) {
+  .header .main_menu .selected a {
+    color: #0C4413;
+  }
+  .header .main_menu > li .submenu_list > li .submenu_btn {
+    justify-content: space-between;
+  }
+  .header .main_menu > li:nth-last-child(2) .submenu_list, .header .main_menu > li:last-child .submenu_list {
+    right: 12px;
+    left: unset;
+  }
+  .header .main_menu > li:nth-last-child(2) .submenu_list > li.opened > a.submenu_btn, .header .main_menu > li:last-child .submenu_list > li.opened > a.submenu_btn {
+    color: #ffffff;
+  }
+  .header .main_menu > li:nth-last-child(2) .submenu_list > li.opened > a.submenu_btn:after, .header .main_menu > li:last-child .submenu_list > li.opened > a.submenu_btn:after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: -25px;
+    z-index: 1;
+    height: 100%;
+    width: 25px;
+    background: transparent;
+  }
+  .header .main_menu > li:nth-last-child(2) .submenu_list .submenu_list, .header .main_menu > li:last-child .submenu_list .submenu_list {
+    right: 100%;
+    left: unset;
+    margin-left: unset;
+    margin-right: 10px;
+  }
+}
+@media screen and (min-width: 1366px) and (max-width: 1600px) {
+  .header .main_menu {
+    margin: 0 -15px;
+    padding-top: 40px;
+  }
+  .header .main_menu > li {
+    padding: 0 15px 40px;
+  }
+  .header .main_menu > li .submenu_list {
+    left: 7px;
+  }
+}
+@media screen and (min-width: 1281px) and (max-width: 1365px) {
+  .header .main_menu {
+    margin: 0 -10px;
+    padding-top: 40px;
+  }
+  .header .main_menu > li {
+    padding: 0 10px 40px;
+    font-size: 140%;
+    line-height: 19px;
+  }
+  .header .main_menu > li .submenu_list {
+    left: 2px;
+  }
+  .header .lg_block {
+    margin-right: 10px;
+  }
+  .header .lg_block .drop_btn {
+    font-size: 1.4rem;
+    line-height: 19px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .header .main_menu {
+    margin: 0 -8px;
+    padding-top: 30px;
+  }
+  .header .main_menu > li {
+    padding: 0 8px 30px;
+    font-size: 120%;
+    line-height: 16px;
+  }
+  .header .main_menu > li > a.submenu_btn:before {
+    margin-left: 5px;
+    font-size: 1.5rem;
+  }
+  .header .main_menu > li .submenu_list {
+    left: 0;
+    padding: 0 8px 12px;
+  }
+  .header .main_menu > li .submenu_list > li {
+    padding-top: 10px;
+  }
+  .header .main_menu > li .submenu_list > li a {
+    padding: 6px 10px;
+  }
+  .header .lg_block {
+    margin: 0 10px;
+  }
+  .header .lg_block .drop_btn {
+    font-size: 1.2rem;
+    line-height: 16px;
+  }
+  .header .lg_block .drop_btn:before {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .header .main_menu > li {
+    font-size: 110%;
+    line-height: 14px;
+  }
+  .header .lg_block .drop_btn {
+    font-size: 1.1rem;
+    line-height: 14px;
+  }
+  .header .lg_block .drop_btn:before {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1600px) {
+  .contact_page {
+    padding: 80px 0 160px;
+  }
+  .contact_page .faq_section {
+    padding-top: 140px;
+  }
+}
+
+/*# sourceMappingURL=index-l.css.map */
